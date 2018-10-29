@@ -3,16 +3,16 @@ alph="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 def CaesarCipherChar(c,k):
     if alp.find(c)!=-1:
         if alp.index(c)+k>25:
-            a=alp[1-k]
+            a=alp[(alp.index(c)+k)%26]
         else:
             a=alp[alp.index(c)+k]
     elif  alph.find(c)!=-1:
         if alph.index(c)+k>25:
-            a=alph[1-k]
+            a=alph[(alph.index(c)+k)%26]
         else:
             a=alph[alph.index(c)+k]       
     else:
-        a=" "
+        a=c
     return a
 def CaesarCipher(S,k):
     S1=""
